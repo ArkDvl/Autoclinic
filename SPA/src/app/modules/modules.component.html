@@ -1,0 +1,20 @@
+<div class="col-md-4 col-sm-6 col-xs-12"> 
+
+
+
+  <div class="ibox-content text-center" routerLink="/app/{{name | replacespace | lowercase }}" routerLinkActive="active">
+      <h3>{{name}}</h3>
+      <div class="m-b-sm">
+        <img *ngIf="name == 'Inventory'" src="assets/img/inventory.png" class="img-circle" />
+        <img *ngIf="name == 'User Management'" src="assets/img/user.png" class="img-circle" />
+        <img *ngIf="name == 'Finance'" src="assets/img/finance.png" class="img-circle" />
+        <img *ngIf="name == 'WorkFlow'" src="assets/img/workflow.png" class="img-circle" />
+      </div>
+              <p class="font-bold"></p>
+
+      <div class="text-center">
+          <!-- <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+          <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a> -->
+      </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+C:\projects\Germaine\bin\Debug\netcoreapp2.0\Germaine.deps.json
+C:\projects\Germaine\bin\Debug\netcoreapp2.0\Germaine.runtimeconfig.json
+C:\projects\Germaine\bin\Debug\netcoreapp2.0\Germaine.runtimeconfig.dev.json
+C:\projects\Germaine\bin\Debug\netcoreapp2.0\Germaine.dll
+C:\projects\Germaine\bin\Debug\netcoreapp2.0\Germaine.pdb
+C:\projects\Germaine\obj\Debug\netcoreapp2.0\Germaine.csproj.CoreCompileInputs.cache
+C:\projects\Germaine\obj\Debug\netcoreapp2.0\Germaine.AssemblyInfoInputs.cache
+C:\projects\Germaine\obj\Debug\netcoreapp2.0\Germaine.AssemblyInfo.cs
+C:\projects\Germaine\obj\Debug\netcoreapp2.0\Germaine.dll
+C:\projects\Germaine\obj\Debug\netcoreapp2.0\Germaine.pdb
+C:\projects\Germaine\obj\Debug\netcoreapp2.0\Germaine.csprojResolveAssemblyReference.cache

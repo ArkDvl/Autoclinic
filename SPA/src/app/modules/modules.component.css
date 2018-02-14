@@ -1,0 +1,9 @@
+.ibox-content{
+    cursor: pointer;
+    border-radius: 5%;
+    margin-bottom: 10px;    
+}
+
+img{
+    width: 150px !important;
+}

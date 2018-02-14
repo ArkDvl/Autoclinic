@@ -1,0 +1,75 @@
+<div id="wrapper">
+  <!-- <app-header></app-header> -->
+  <div class="gray-bg">
+   
+        <div class="row wrapper border-bottom white-bg">
+            <div class="col-md-12 clearfix" style="padding: 10px !important">
+                <a href="javascript:;">
+                    <img src="{{src}}" class="img-circle thumb32 pull-left" width="50" height="50" />
+                </a>
+                
+                    <span dropdown class="pull-right" style="margin-top: 10px">
+                        <a href="javascript:;" dropdownToggle>
+                            Welcome, {{ firstname }} <span class="caret"></span>
+                        </a>
+                        <ul *dropdownMenu class="dropdown-menu" role="menu">
+                            <li role="menuitem"><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
+                            <li class="divider dropdown-divider"></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:;" (click)="logOut()"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>                  
+                    </span>
+            </div>
+        </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+    
+    <div class="row" *ngIf="!passwordReset">
+        <div class="col-md-8 col-md-offset-2 m-t-lg">            
+          <div class="row">
+              <app-modules *ngFor="let x of mod" [module]="x"></app-modules>
+          </div>
+        </div>
+        
+        </div>
+    </div>
+
+<div *ngIf="passwordReset" class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static', show: true, keyboard: false }"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Change your password to continue!</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="passwordForm" novalidate role="form" (ngSubmit)="changePassword()">
+                    <div class="form-group indicator">
+                        <!-- {{ passwordForm.valid }} -->
+                      <!-- <div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Change ypur password to continue! </div> -->
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" formControlName="password" minlength="5" maxlength="50" required>                        
+                        <i class="text-danger" *ngIf="!passwordForm?.errors?.strength">{{ passwordForm?.errors?.message }}</i>
+                        <!-- <i class="text-success" *ngIf="passwordForm?.errors == null">Excellent!</i>R -->
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confirm_password" required >
+                        <i class="text-danger" *ngIf="passwordForm?.errors?.mismatch">Password does not match!</i>
+                    </div>
+                    <div *ngIf="passwordForm.valid">
+                        <button type="submit" *ngIf="!submitButton" class="btn btn-primary block full-width m-b" >
+                        Continue  
+                        </button>
+                        <button *ngIf="submitButton" class="btn btn-primary block full-width m-b" [disabled]="true"><i class="fa fa-spinner fa-pulse"></i> Please Wait</button>
+                    </div>
+                    <button *ngIf="!passwordForm.valid" class="btn btn-primary block full-width m-b" [disabled]="true">Continue</button>
+                    
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
